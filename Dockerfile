@@ -1,9 +1,9 @@
-FROM Apache:latest
+FROM httpd:latest
 
-WORKINGDIR /usr/local/apache2/htdocs
+WORKDIR /usr/local/apache2/htdocs
 
-COPY . .
+COPY . /usr/local/apache2/htdocs
 
-ExPOSE 80
+EXPOSE 80
 
 CMD ["apachectl", "-D", "FOREGROUND"]
